@@ -5,10 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
-	<script src="js/app.js"> </script>
+    <script src="js/app.js" defer></script>
     <title>To-do list</title>
   </head>
   <body>
-	  
+    <header>To-do list</header>
+    <div id="form">
+      <input type="text" id="input-text" name="input" />
+      <button id="add-btn">Add task</button>
+    </div>
+
+    <div class="task-list">
+      <h1>My to-do task</h1>
+      <div class="task">
+        <p>clean a room</p>
+        <button>edit</button>
+        <button>delete</button>
+      </div>
+      <div class="task">
+        <p>Update shopping list</p>
+        <button>edit</button>
+        <button>delete</button>
+      </div>
+      <div class="task">
+        <p>Add more tasks</p>
+        <button>edit</button>
+        <button>delete</button>
+      </div>
+    </div>
   </body>
 </html>
