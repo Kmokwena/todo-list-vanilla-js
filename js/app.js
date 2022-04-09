@@ -4,23 +4,29 @@ const inputText = document.getElementById("input-text");
 const addBtn = document.getElementById("add-btn");
 
 addBtn.addEventListener("click", function () {
-  let text = inputText.value;
-
+  addTask(inputText.value);
   inputText.value = "";
-  const task = document.createElement("div");
-  task.className = "task";
+});
+
+function addTask(task) {
+  const taskDiv = document.createElement("div");
+  taskDiv.className = "task";
 
   const taskText = document.createElement("p");
-  taskText.innerText = text;
-  task.appendChild(taskText);
+  taskText.innerText = task;
+  taskDiv.appendChild(taskText);
 
   const editBtn = document.createElement("button");
   editBtn.innerText = "edit";
-  task.appendChild(editBtn);
+  taskDiv.appendChild(editBtn);
 
   const deleteBtn = document.createElement("button");
   deleteBtn.innerText = "delete";
-  task.appendChild(deleteBtn);
+  taskDiv.appendChild(deleteBtn);
 
-  taskList.appendChild(task);
-});
+  taskList.appendChild(taskDiv);
+}
+
+addTask("sleep");
+addTask("wake");
+addTask("eat");
