@@ -4,7 +4,11 @@ const inputText = document.getElementById("input-text");
 const addBtn = document.getElementById("add-btn");
 
 addBtn.addEventListener("click", function () {
-  addTask(inputText.value);
+  const value = inputText.value;
+  if (value !== "") {
+    addTask(value);
+    tasks.push(value);
+  }
   inputText.value = "";
 });
 
@@ -27,6 +31,10 @@ function addTask(task) {
   taskList.appendChild(taskDiv);
 }
 
-addTask("sleep");
-addTask("wake");
-addTask("eat");
+for (let i = 0; i < tasks.length; i++) {
+  addTask(tasks[i]);
+}
+
+
+// no! relax .................
+tasks.forEach((task) => addTask(task));
